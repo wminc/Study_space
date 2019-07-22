@@ -15,9 +15,22 @@ Created on 2019/7/19 16:30
 白噪声很有用，也可以用来断开两个连在一块的物体等。
 
 
-cv2.erode(src, kernel, iteration)
+cv2.erode(src, kernel, dst=None, anchor=None, iterations=None, borderType=None, borderValue=None)
 
-参数说明：src表示的是输入图片，kernel表示的是方框的大小，iteration表示迭代的次数
+参数说明：
+    src：输入图像，可以是灰度图像，可以是彩色图像。
+    
+    dst：输出图像。
+    
+    kernel：用于腐蚀运算的核结构元素，可以使用getStructuringElement()函数创建。
+    
+    anchor：锚点，默认为(-1, -1)
+    
+    iterations：迭代次数
+    
+    borderType：边界填充类型
+    
+    borderValue：边界填充值
 腐蚀操作原理：存在一个kernel，比如(5, 5)，在图像中不断的平移，在这个25方框中，哪一种颜色所占的比重大，25个方格中将都是这种颜色
 '''
 

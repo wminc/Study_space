@@ -13,8 +13,23 @@ Created on 2019/7/19 16:50
 小。所以我们再对他进行膨胀。这时噪声已经被去除了，不会再回来了，但是
 前景还在并会增加。膨胀也可以用来连接两个分开的物体
 
-cv2.dilate(src, kernel, iteration)
-参数说明: src表示输入的图片， kernel表示方框的大小， iteration表示迭代的次数
+cv2.dilate(src, kernel, dst=None, anchor=None, iterations=None, borderType=None, borderValue=None)
+
+参数说明:
+
+    src：输入图像，可以是灰度图像，可以是彩色图像。
+    
+    dst：输出图像。
+    
+    kernel：用于腐蚀运算的核结构元素，可以使用getStructuringElement()函数创建。
+    
+    anchor：锚点，默认为(-1, -1)
+    
+    iterations：迭代次数
+    
+    borderType：边界填充类型
+    
+    borderValue：边界填充值
 膨胀操作原理：存在一个kernel，在图像上进行从左到右，从上到下的平移，如果方框中存在白色，那么这个方框内所有的颜色都是白色
 '''
 
