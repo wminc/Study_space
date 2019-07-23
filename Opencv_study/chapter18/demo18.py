@@ -20,3 +20,5 @@ Sobel，Scharr 其实就是求一阶或二阶导数。
 Scharr 是对 Sobel（使用小的卷积核求解求解梯度角度时）的优化。
 Laplacian 是求二阶导数
 '''
+
+

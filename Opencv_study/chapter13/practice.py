@@ -27,7 +27,7 @@ img_original = cv2.imread('../images/color.jpg')
 img_hsv = cv2.cvtColor(img_original, cv2.COLOR_BGR2HSV)
 
 # 新建窗口
-cv2.namedWindow('HSV Image get color region')
+cv2.namedWindow(winName)
 
 # 新建6个滑动条，表示颜色范围的上下边界，这里滑动条的初始化位置即为黄色的颜色范围
 cv2.createTrackbar('B-low', winName, 0, 255, nothing)

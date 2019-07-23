@@ -25,9 +25,24 @@ print('-----------------')
 imread(filename, flags=None)
 filename:读取的文件名
 flags:指定图像的读取方式
-    cv2.IMREAD_COLOR : 默认使用该种标识。加载一张彩色图片，忽视它的透明度。
-    cv2.IMREAD_GRAYSCALE : 加载一张灰度图。
-    cv2.IMREAD_UNCHANGED : 加载图像，包括它的Alpha通道
+    cv2.IMREAD_UNCHANGED：如果设置，则按原样返回加载的图像（带有Alpha通道，否则会被裁剪）。
+    cv2.IMREAD_GRAYSCALE：如果设置，总是将图像转换为单通道灰度图像读入。
+    cv2.IMREAD_COLOR：如果设置，总是将图像转换为3通道BGR彩色图像读入。
+    cv2.IMREAD_ANYDEPTH：如果设置，当输入具有相应深度时返回16位/ 32位图像，否则将其转换为8位。
+    cv2.IMREAD_ANYCOLOR：如果设置，图像将以任何可能的颜色格式读取。
+    cv2.IMREAD_LOAD_GDAL：如果设置，总是使用GDAL驱动程序加载图像。
+    cv2.IMREAD_REDUCED_GRAYSCALE_2：如果设置，总是将图像转换为单通道灰度图像，图像尺寸减小1/2。
+    cv2.IMREAD_REDUCED_COLOR_2：如果设置，总是将图像转换为3通道BGR彩色图像，图像尺寸减小1/2。
+    cv2.IMREAD_REDUCED_GRAYSCALE_4：如果设置，总是将图像转换为单通道灰度图像，图像尺寸减小1/4。
+    cv2.IMREAD_REDUCED_COLOR_4：如果设置，总是将图像转换为3通道BGR彩色图像，图像尺寸减小1/4。
+    cv2.IMREAD_REDUCED_GRAYSCALE_8：如果设置，总是将图像转换为单通道灰度图像，图像尺寸减小1/8。 
+    cv2.IMREAD_REDUCED_COLOR_8：如果设置，总是将图像转换为3通道BGR彩色图像，图像尺寸减小1/8
+
+    常用的是前三种。因为flags是整型，所以传入数值也行：
+    flags >0：等同于IMREAD_COLOR。
+    flags =0：等同于 IMREAD_GRAYSCALE。
+    flags <0： 等同于IMREAD_UNCHANGED。
+    通常是给1、0、-1，给其他整型也是可以的。
 
 '''
 
