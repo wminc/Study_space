@@ -19,7 +19,7 @@ def nothing(x):
 # THRESH_TOZERO=3,
 # THRESH_TOZERO_INV=4
 
-gray_img = cv2.imread('../images/meixi.jpg',0)
+gray_img = cv2.imread('../images/cpw.jpg',0)
 
 cv2.namedWindow('test_window')
 

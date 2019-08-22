@@ -31,7 +31,7 @@ orange = cv2.imread('../images/orange.jpg')
 
 # 获取苹果的高斯金字塔，原图+6个构造的图
 A = apple.copy()
-gpA = [A]
+gpA = []
 for i in range(6):
     A = cv2.pyrDown(A)
     gpA.append(A)
@@ -41,7 +41,7 @@ print(len(gpA))
 
 # 获取橘子的高斯金字塔,原图+6个构造的图
 B = orange.copy()
-gpB = [B]
+gpB = []
 for i in range(6):
     B = cv2.pyrDown(B)
     gpB.append(B)
